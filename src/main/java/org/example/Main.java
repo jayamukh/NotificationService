@@ -41,14 +41,14 @@ public class Main {
         settings.setSendImmediately(MessageType.GEN_CORR, false);
 
         Company entegral = new Company("XYZ", settings);
-        entegral.addEmployee(dev);
-        entegral.addEmployee(mgr);
-        entegral.addEmployee(exec);
+        xyz.addEmployee(dev);
+        xyx.addEmployee(mgr);
+        xyz.addEmployee(exec);
 
         MessageService messageService = new MessageService();
-        messageService.sendMessage(entegral, new Message(MessageType.SYS_OUT, "System will be down at 2AM."));
-        messageService.sendMessage(entegral, new Message(MessageType.GEN_CORR, "Company picnic this weekend!"));
-        messageService.sendMessage(entegral, new Message(MessageType.GEN_CORR, "Don't forget to RSVP."));
+        messageService.sendMessage(xyz, new Message(MessageType.SYS_OUT, "System will be down at 2AM."));
+        messageService.sendMessage(xyz, new Message(MessageType.GEN_CORR, "Company picnic this weekend!"));
+        messageService.sendMessage(xyz, new Message(MessageType.GEN_CORR, "Don't forget to RSVP."));
 
         new BatchScheduler(messageService).runNightlyBatch();
 
